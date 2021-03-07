@@ -9,3 +9,5 @@ COPY . /usr/src/app
 RUN npm run build
 
 EXPOSE 2021
+
+CMD [ "npm", "run", "local" ]

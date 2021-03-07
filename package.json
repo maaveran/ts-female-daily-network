@@ -9,7 +9,7 @@
     "watch-ts": "tsc -w",
     "watch-node": "cross-env NODE_ENV=local dotenv-load nodemon dist/server.js",
     "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript, Node\" -c \"yello.bold, cyan.bold\" \"npm run watch-ts\" \"npm run watch-node\"",
-    "local": "touch ./dist/.env && cp .env.local && NODE_ENV=development node ./dist/server.js",
+    "local": "touch ./dist/.env && cp .env.local && cross-env NODE_ENV=local dotenv-load pm2 ./dist/server.js --watch --name 'ts-fdn",
     "test:unit": "cross-env NODE_ENV=local dotenv-load jest"
   },
   "repository": {
